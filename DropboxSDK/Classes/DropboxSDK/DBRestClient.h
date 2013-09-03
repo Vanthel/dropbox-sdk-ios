@@ -64,7 +64,9 @@
    file set parentRev to nil. */
 - (void)uploadFile:(NSString *)filename toPath:(NSString *)path withParentRev:(NSString *)parentRev
     fromPath:(NSString *)sourcePath;
-
+- (void)uploadFile:(NSString *)filename toPath:(NSString *)path
+         overwrite:(bool)overwrite
+          fromPath:(NSString *)sourcePath;
 - (void)cancelFileUpload:(NSString *)path;
 
 /* Avoid using this because it is very easy to overwrite conflicting changes. Provided for backwards

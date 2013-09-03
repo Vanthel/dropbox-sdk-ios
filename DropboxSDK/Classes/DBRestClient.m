@@ -575,6 +575,13 @@ params:(NSDictionary *)params
     [self uploadFile:filename toPath:path fromPath:sourcePath params:nil];
 }
 
+- (void)uploadFile:(NSString *)filename toPath:(NSString *)path overwrite:(bool)overwrite
+          fromPath:(NSString *)sourcePath {
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObject:(overwrite ? @"true" : @"false") forKey:@"overwrite"];
+    [self uploadFile:filename toPath:path fromPath:sourcePath params:params];
+}
+
 - (void)uploadFile:(NSString *)filename toPath:(NSString *)path withParentRev:(NSString *)parentRev
     fromPath:(NSString *)sourcePath {
 
